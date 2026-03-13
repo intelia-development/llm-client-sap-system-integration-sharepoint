@@ -20,6 +20,7 @@ services:
       - rag_api
       - sap-docs-mcp
       - vsp-mcp
+      - abapdoc-mcp
     volumes:
       - type: bind
         source: ./.env
@@ -65,8 +66,26 @@ services:
       - MCP_PROXY_PORT=3000
       - VSP_MODE=focused
       - SAP_READ_ONLY=true
-      - VSP_EXTRA_ARGS=--block-free-sql --transport-read-only --disabled-groups debugger
+      - VSP_EXTRA_ARGS=--block-free-sql
     restart: unless-stopped
     ports:
       - "3130:3000"
+
+  abapdoc-mcp:
+    container_name: abapdoc-mcp
+    build:
+      context: ./docker/abapdoc-mcp
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - SAP_URL=${SAP_URL}
+      - SAP_USER=${SAP_TECH_USER}
+      - SAP_PASSWORD=${SAP_TECH_PASSWORD}
+      - SAP_CLIENT=${SAP_CLIENT}
+      - SAP_INSECURE=${SAP_INSECURE}
+      - SAP_ENABLE_TRANSPORTS=true
+      - MCP_PROXY_PORT=3000
+    restart: unless-stopped
+    ports:
+      - "3131:3000"
 

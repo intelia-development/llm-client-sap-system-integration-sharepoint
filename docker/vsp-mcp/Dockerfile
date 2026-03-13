@@ -5,7 +5,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 ARG VSP_REPO=https://github.com/oisee/vibing-steampunk.git
-ARG VSP_REF=main
+ARG VSP_REF=v2.1.0
 
 WORKDIR /src
 RUN git clone --depth 1 --branch ${VSP_REF} ${VSP_REPO} vibing-steampunk

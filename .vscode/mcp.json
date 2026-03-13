@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "abap-doc": {
+      "type": "http",
+      "url": "http://localhost:3131/mcp"
+    },
+    "sap-dev-adt": {
+      "type": "http",
+      "url": "http://localhost:3130/mcp"
+    },
+    "sap-docs": {
+      "type": "http",
+      "url": "http://localhost:3124/mcp"
+    }
+  }
+}

@@ -67,6 +67,7 @@ services:
       - VSP_MODE=focused
       - SAP_READ_ONLY=true
       - VSP_EXTRA_ARGS=--block-free-sql
+      - CUSTOM_FOOTER=Intelia AIP
     restart: unless-stopped
     ports:
       - "3130:3000"

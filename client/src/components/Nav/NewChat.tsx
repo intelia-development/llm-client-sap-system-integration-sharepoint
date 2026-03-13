@@ -55,6 +55,14 @@ export default function NewChat({
 
   return (
     <>
+    {/*TIC BUDJA*/}
+      <div className="flex justify-center px-2 pb-1 pt-3">
+        <img
+          src="/assets/logo.svg"
+          alt="Application logo"
+          className="h-8 w-auto max-w-[160px] object-contain"
+        />
+      </div>
       <div className="flex items-center justify-between px-0.5 py-[2px] md:py-2">
         <TooltipAnchor
           description={localize('com_nav_close_sidebar')}
